@@ -1,0 +1,979 @@
+/* CSS do site PetLife */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #faf8f2;
+    color: #333333;
+}
+
+/* cabeçalho */
+header {
+    background-color: #214c3d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f4b675;
+}
+
+/* conteudo */
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 30px 0;
+}
+
+h2 {
+    color: #214c3d;
+    font-size: 30px;
+}
+
+h3 {
+    color: #214c3d;
+}
+
+/* parte de cima das paginas */
+.hero {
+    text-align: center;
+}
+
+.hero h1 {
+    color: #214c3d;
+    font-size: 40px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.hero img {
+    width: 500px;
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.hero a {
+    background-color: #f4b675;
+    color: #214c3d;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* cards dos servicos */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cards h2 {
+    width: 100%;
+}
+
+.cards article {
+    width: 30%;
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.cards-quatro article {
+    width: 23%;
+    border-top: 4px solid #f4b675;
+}
+
+article img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+article a {
+    background-color: #214c3d;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+article a:hover {
+    background-color: #15382c;
+}
+
+/* tabela de precos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th {
+    background-color: #214c3d;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #dddddd;
+}
+
+/* chamada */
+.chamada {
+    text-align: center;
+}
+
+.chamada a {
+    background-color: #214c3d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+/* formulario */
+#contato, #formulario {
+    background-color: #edf1e7;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #214c3d;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #15382c;
+}
+
+/* rodape */
+footer {
+    background-color: #15382c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+}
+
+/* para celular */
+@media (max-width: 700px) {
+    .cards article {
+        width: 100%;
+    }
+
+    .cards-quatro article {
+        width: 100%;
+    }
+}
+
+/* ===== estados do formulario (usados pelo script.js) ===== */
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+    border-color: #b3261e;
+    background-color: #fff6f5;
+}
+
+input[aria-invalid="false"],
+select[aria-invalid="false"],
+textarea[aria-invalid="false"] {
+    border-color: #2e7d4f;
+}
+
+.mensagem-erro {
+    display: block;
+    margin-top: 5px;
+    color: #b3261e;
+    font-size: 14px;
+}
+
+.contador {
+    display: block;
+    margin-top: 4px;
+    text-align: right;
+    color: #666666;
+    font-size: 13px;
+}
+
+.form-status {
+    margin: 0 0 15px 0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.form-status--erro {
+    background-color: #fdecea;
+    color: #8a1c14;
+    border: 1px solid #f5c2bd;
+}
+
+.form-status--sucesso {
+    background-color: #e3f1e7;
+    color: #1e5a3a;
+    border: 1px solid #b9dcc5;
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+/* ===== efeitos e interacoes (usados pelo efeitos.js) ===== */
+
+html {
+    scroll-padding-top: 100px; /* links internos nao ficam escondidos atras do cabecalho */
+}
+
+/* cabecalho fixo que encolhe */
+.header-fixo {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-fixo h1 {
+    transition: font-size 0.3s ease;
+}
+
+.header-compacto {
+    padding: 10px 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+.header-compacto h1 {
+    font-size: 28px;
+}
+
+/* menu com sublinhado animado */
+nav a {
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 2px;
+    background-color: #f4b675;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+nav a:hover::after,
+nav a[aria-current="page"]::after {
+    transform: scaleX(1);
+}
+
+/* botoes e links com leve elevacao */
+.hero a,
+.chamada a,
+article a,
+button {
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.hero a:hover,
+.chamada a:hover,
+article a:hover,
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(33, 76, 61, 0.25);
+}
+
+/* titulo digitado */
+.texto-restante {
+    color: transparent;
+}
+
+.cursor-digitacao {
+    position: relative;
+    display: inline-block;
+    width: 0;
+}
+
+.cursor-digitacao::after {
+    content: "";
+    position: absolute;
+    left: 1px;
+    bottom: -0.15em;
+    width: 3px;
+    height: 1.05em;
+    background-color: #f4b675;
+    animation: piscar 1s steps(1) infinite;
+}
+
+.cursor-fim::after {
+    animation: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+@keyframes piscar {
+    50% { opacity: 0; }
+}
+
+/* conteudo surgindo ao rolar */
+.revelar {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.revelar.visivel {
+    opacity: 1;
+    transform: none;
+}
+
+/* cards */
+.cards article {
+    transition: box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.cards article:hover,
+.cards article.card-ativo {
+    box-shadow: 0 14px 28px rgba(33, 76, 61, 0.18);
+}
+
+/* tabelas */
+tbody tr:hover td,
+.col-destaque {
+    background-color: #fdf3e6;
+}
+
+td {
+    transition: background-color 0.2s ease;
+}
+
+.linha-ativa td {
+    background-color: #edf1e7;
+}
+
+td.celula-ativa {
+    background-color: #f4b675;
+    color: #214c3d;
+    font-weight: bold;
+}
+
+/* simulador de hospedagem */
+.simulador {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #edf1e7;
+    border-radius: 10px;
+    border-top: 4px solid #f4b675;
+}
+
+.simulador h3 {
+    margin-top: 0;
+}
+
+.simulador-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    align-items: end;
+}
+
+.simulador-campos p {
+    margin: 0;
+}
+
+.seletor-diarias {
+    display: flex;
+    gap: 6px;
+    margin-top: 5px;
+}
+
+.seletor-diarias input {
+    margin-top: 0;
+    text-align: center;
+    -moz-appearance: textfield;
+}
+
+.seletor-diarias input::-webkit-inner-spin-button,
+.seletor-diarias input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.seletor-diarias button {
+    padding: 0 14px;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.simulador-check label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 0;
+    cursor: pointer;
+}
+
+.simulador-check input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #214c3d;
+}
+
+.simulador-total {
+    margin: 20px 0 5px 0;
+    font-size: 20px;
+}
+
+.simulador-total strong {
+    display: inline-block;
+    color: #214c3d;
+    font-size: 28px;
+}
+
+.simulador-detalhe {
+    margin: 0;
+    color: #666666;
+    font-size: 14px;
+}
+
+.pulsar {
+    animation: pulsar 0.45s ease;
+}
+
+@keyframes pulsar {
+    40% { transform: scale(1.12); color: #c47a2c; }
+}
+
+/* fotos ampliaveis (adocao) */
+.foto-ampliavel {
+    cursor: zoom-in;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.foto-ampliavel:hover,
+.foto-ampliavel:focus-visible {
+    filter: brightness(1.06);
+    outline: 3px solid #f4b675;
+    outline-offset: 2px;
+}
+
+.lightbox {
+    width: min(92vw, 720px);
+    padding: 0;
+    border: none;
+    border-radius: 16px;
+    background-color: white;
+    color: #333333;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.lightbox[open] {
+    animation: abrir-foto 0.3s ease;
+}
+
+.lightbox::backdrop {
+    background-color: rgba(21, 56, 44, 0.75);
+}
+
+.lightbox-conteudo {
+    position: relative;
+}
+
+.lightbox img {
+    display: block;
+    width: 100%;
+    max-height: 65vh;
+    object-fit: cover;
+}
+
+.lightbox-legenda {
+    padding: 15px 20px 20px 20px;
+}
+
+.lightbox-legenda h3 {
+    margin: 0 0 5px 0;
+    font-size: 26px;
+}
+
+.lightbox-fechar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    font-size: 26px;
+    line-height: 1;
+    border-radius: 50%;
+}
+
+@keyframes abrir-foto {
+    from { opacity: 0; transform: scale(0.92); }
+}
+
+/* botao voltar ao topo */
+.voltar-topo {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 40;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #f4b675;
+    color: #214c3d;
+    font-size: 22px;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.voltar-topo.visivel {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.voltar-topo:hover {
+    background-color: #214c3d;
+    color: white;
+}
+
+/* patinhas e comemoracao */
+.patinha,
+.confete {
+    position: fixed;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.patinha {
+    font-size: 22px;
+    animation: patinha 0.9s ease-out forwards;
+}
+
+@keyframes patinha {
+    0%   { opacity: 0; transform: translate(-50%, -50%) rotate(var(--giro)) scale(0.4); }
+    25%  { opacity: 1; transform: translate(-50%, -50%) rotate(var(--giro)) scale(1.1); }
+    100% { opacity: 0; transform: translate(-50%, -110%) rotate(var(--giro)) scale(1); }
+}
+
+.confete {
+    font-size: 24px;
+    animation: confete 1.4s cubic-bezier(0.2, 0.7, 0.4, 1) forwards;
+}
+
+@keyframes confete {
+    0%   { opacity: 1; transform: translate(-50%, -50%) scale(0.3); }
+    55%  { opacity: 1; transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) rotate(var(--r)) scale(1); }
+    100% { opacity: 0; transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y) + 160px)) rotate(var(--r)) scale(0.9); }
+}
+
+/* topo das paginas: imagem flutuando de leve */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .hero img {
+        animation: flutuar 6s ease-in-out infinite;
+    }
+
+    @keyframes flutuar {
+        50% { transform: translateY(-8px); }
+    }
+}
+
+/* celular */
+@media (max-width: 700px) {
+    .header-compacto h1 {
+        font-size: 22px;
+    }
+
+    .header-compacto nav {
+        margin-top: 5px;
+    }
+
+    .simulador-campos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== calendario do campo de data (calendario.js) ===== */
+.campo-data {
+    position: relative;
+    display: block;
+}
+
+.campo-data input {
+    padding-right: 48px;
+}
+
+.campo-data-botao {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 44px;
+    height: calc(100% - 5px);
+    padding: 0;
+    border-radius: 0 5px 5px 0;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.campo-data-botao:hover {
+    background-color: #f4b675;
+    transform: none;
+    box-shadow: none;
+}
+
+.campo-data.escolhido input {
+    animation: data-escolhida 0.6s ease;
+}
+
+@keyframes data-escolhida {
+    30% { background-color: #fdf3e6; transform: scale(1.01); }
+}
+
+.calendario {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: 30;
+    width: 300px;
+    max-width: 100%;
+    padding: 12px;
+    background-color: white;
+    border-radius: 12px;
+    border-top: 4px solid #f4b675;
+    box-shadow: 0 14px 34px rgba(33, 76, 61, 0.25);
+    animation: abrir-calendario 0.2s ease;
+}
+
+@keyframes abrir-calendario {
+    from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+}
+
+.calendario-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.calendario-titulo {
+    color: #214c3d;
+}
+
+.calendario-nav {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    font-size: 22px;
+    line-height: 1;
+    border-radius: 50%;
+}
+
+.calendario-nav:disabled {
+    opacity: 0.3;
+    cursor: default;
+    transform: none;
+    box-shadow: none;
+}
+
+.calendario-semana,
+.calendario-dias {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+    text-align: center;
+}
+
+.calendario-semana abbr {
+    padding: 4px 0;
+    color: #888888;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.calendario-dia {
+    aspect-ratio: 1;
+    padding: 0;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #333333;
+    font-size: 14px;
+    transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.calendario-dia:hover:not(:disabled),
+.calendario-dia.ativo {
+    background-color: #fdf3e6;
+    color: #214c3d;
+    transform: scale(1.08);
+    box-shadow: none;
+}
+
+.calendario-dia.ativo {
+    outline: 2px solid #f4b675;
+}
+
+.calendario-dia.eh-hoje {
+    font-weight: bold;
+    box-shadow: inset 0 0 0 2px #214c3d;
+}
+
+.calendario-dia.selecionado,
+.calendario-dia.selecionado:hover {
+    background-color: #214c3d;
+    color: white;
+}
+
+.calendario-dia:disabled {
+    color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.calendario-dias.vindo-direita {
+    animation: mes-direita 0.25s ease;
+}
+
+.calendario-dias.vindo-esquerda {
+    animation: mes-esquerda 0.25s ease;
+}
+
+@keyframes mes-direita {
+    from { opacity: 0; transform: translateX(20px); }
+}
+
+@keyframes mes-esquerda {
+    from { opacity: 0; transform: translateX(-20px); }
+}
+
+.calendario-rodape {
+    margin-top: 8px;
+    text-align: right;
+}
+
+.calendario-hoje {
+    padding: 6px 16px;
+    font-size: 14px;
+    background-color: #f4b675;
+    color: #214c3d;
+    font-weight: bold;
+}
+
+/* ===== preco "a partir de" nos servicos ===== */
+.cards article {
+    position: relative;
+}
+
+.etiqueta-preco {
+    position: absolute;
+    top: -14px;
+    right: 15px;
+    z-index: 2;
+    padding: 7px 16px;
+    background-color: #f4b675;
+    color: #214c3d;
+    font-size: 15px;
+    border-radius: 20px;
+    box-shadow: 0 6px 14px rgba(33, 76, 61, 0.2);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(8px) scale(0.9);
+    transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.etiqueta-preco strong {
+    font-size: 19px;
+}
+
+.cards article:hover .etiqueta-preco,
+.cards article:focus-within .etiqueta-preco {
+    opacity: 1;
+    transform: none;
+}
+
+/* sem mouse (celular): a etiqueta ja fica visivel */
+@media (hover: none) {
+    .etiqueta-preco {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* brilho que segue o mouse nos cards */
+.cards article::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(244, 182, 117, 0.28), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.cards article.card-ativo::before {
+    opacity: 1;
+}
+
+/* ===== tabela de precos clicavel (Inicio) ===== */
+td.celula-com-botao {
+    padding: 0;
+}
+
+.preco-botao {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 0;
+    background-color: transparent;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.preco-botao:hover,
+.preco-botao:focus-visible {
+    background-color: #f4b675;
+    color: #214c3d;
+    font-weight: bold;
+    transform: none;
+    box-shadow: none;
+}
+
+.dica-tabela {
+    margin: 8px 0 0 0;
+    color: #666666;
+    font-size: 14px;
+}
+
+.campo-destaque {
+    animation: campo-destaque 1.4s ease;
+}
+
+@keyframes campo-destaque {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(244, 182, 117, 0); }
+    30% { box-shadow: 0 0 0 5px rgba(244, 182, 117, 0.8); }
+}
+
+/* ===== pets que falam (imagem do topo) ===== */
+.imagem-falante {
+    cursor: pointer;
+}
+
+.pulinho {
+    animation: pulinho 0.4s ease !important;
+}
+
+@keyframes pulinho {
+    40% { transform: translateY(-14px) scale(1.02); }
+}
+
+.balao-fala {
+    position: fixed;
+    z-index: 100;
+    padding: 8px 14px;
+    background-color: white;
+    color: #214c3d;
+    font-weight: bold;
+    border-radius: 18px;
+    border: 2px solid #f4b675;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+    pointer-events: none;
+    animation: balao 1.6s ease forwards;
+}
+
+.balao-fala::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    background-color: white;
+    border-right: 2px solid #f4b675;
+    border-bottom: 2px solid #f4b675;
+    transform: rotate(45deg);
+}
+
+@keyframes balao {
+    0%   { opacity: 0; transform: translate(-50%, -100%) scale(0.5); }
+    15%  { opacity: 1; transform: translate(-50%, calc(-100% - 18px)) scale(1.05); }
+    25%  { transform: translate(-50%, calc(-100% - 18px)) scale(1); }
+    80%  { opacity: 1; transform: translate(-50%, calc(-100% - 24px)); }
+    100% { opacity: 0; transform: translate(-50%, calc(-100% - 40px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .balao-fala {
+        animation-duration: 2.5s;
+    }
+}

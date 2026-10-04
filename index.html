@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetLife - Início</title>
+      <link rel="stylesheet" href="style.css" />
+      <script src="script.js" defer></script>
+      <script src="calendario.js" defer></script>
+      <script src="efeitos.js" defer></script>
+</head>
+  <body>
+    <header>
+      <h1>PetLife</h1>
+      <nav aria-label="Menu principal">
+        <a href="index.html" aria-current="page">Início</a>
+        <a href="banho-tosa.html">Banho e Tosa</a>
+        <a href="hotel.html">Hotel</a>
+        <a href="adocao.html">Adoção</a>
+        <a href="#contato">Agendar</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <h2>Cuidando de quem faz parte da sua família.</h2>
+        <p>Tudo para o bem-estar do seu melhor amigo.</p>
+        <img
+          src="cao-gato.png"
+          alt="Um cachorro e um gato juntos"
+          width="400"
+        />
+        <p>
+          <a href="#servicos">Conheça nossos serviços</a>
+        </p>
+      </section>
+      <section id="servicos" class="cards">
+        <h2>Nossos serviços</h2>
+        <article>
+          <img src="banho.png" alt="Cachorro tomando banho" width="250" />
+
+          <h3>Banho e Tosa</h3>
+          <p>Deixe seu pet ainda mais limpo e cheiroso.</p>
+          <a href="banho-tosa.html">Saiba mais</a>
+        </article>
+        <article>
+          <img src="hotel.png" alt="Cachorro em uma casinha" width="250" />
+
+          <h3>Hotel</h3>
+          <p>Conforto e segurança para o seu pet.</p>
+          <a href="hotel.html">Saiba mais</a>
+        </article>
+        <article>
+          <img src="adocao.png" alt="Animal à espera de adoção" width="250" />
+
+          <h3>Adoção</h3>
+          <p>Dê uma nova chance a um amigo.</p>
+          <a href="adocao.html">Saiba mais</a>
+        </article>
+      </section>
+      <section>
+        <h2>Tabela de serviços</h2>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Serviço</th>
+              <th scope="col">Pequeno</th>
+              <th scope="col">Médio</th>
+              <th scope="col">Grande</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Banho</th>
+              <td>R$ 35</td>
+              <td>R$ 45</td>
+              <td>R$ 55</td>
+            </tr>
+            <tr>
+              <th scope="row">Banho + Tosa</th>
+              <td>R$ 55</td>
+              <td>R$ 70</td>
+              <td>R$ 85</td>
+            </tr>
+            <tr>
+              <th scope="row">Corte de unhas</th>
+              <td>R$ 15</td>
+              <td>R$ 15</td>
+              <td>R$ 20</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="contato">
+        <h2>Entre em contato</h2>
+        <form>
+          <p>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" />
+          </p>
+          <p>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" />
+          </p>
+          <p>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" />
+          </p>
+          <p>
+            <label for="servico">Serviço desejado:</label>
+
+            <select id="servico" name="servico">
+              <option value="">Selecione</option>
+              <option value="banho">Banho</option>
+              <option value="banho-tosa">Banho e Tosa</option>
+              <option value="corte-unhas">Corte de unhas</option>
+              <option value="hotel">Hotel</option>
+            </select>
+          </p>
+          <p>
+            <label for="data">Data desejada:</label>
+            <input type="text" id="data" name="data" placeholder="DD/MM/AAAA" />
+          </p>
+          <p>
+            <label for="mensagem">Mensagem:</label>
+            <br />
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="4"
+              cols="30"
+            ></textarea>
+          </p>
+          <button type="button">Enviar</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p><strong>PetLife</strong></p>
+      <nav aria-label="Menu do rodapé">
+        <a href="index.html" aria-current="page">Início</a>
+        <a href="banho-tosa.html">Banho e Tosa</a>
+        <a href="hotel.html">Hotel</a>
+        <a href="adocao.html">Adoção</a>
+      </nav>
+    </footer>
+  </body>
+</html>

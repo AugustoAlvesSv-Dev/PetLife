@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetLife - Adoção</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="calendario.js" defer></script>
+    <script src="efeitos.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>PetLife</h1>
+
+        <nav aria-label="Menu principal">
+
+            <a href="index.html">Início</a>
+            <a href="banho-tosa.html">Banho e Tosa</a>
+            <a href="hotel.html">Hotel</a>
+            <a href="adocao.html" aria-current="page">Adoção</a>
+            <a href="index.html#contato">Agendar</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <h2>
+                Um novo amigo está esperando por você.
+            </h2>
+
+            <p>
+                Adote e transforme a vida de um pet.
+                E também a sua!
+            </p>
+
+            <img
+                src="Imagem_adocao1.png"
+                alt="Animal à espera de adoção"
+                width="400"
+            />
+
+        </section>
+
+
+        <section class="cards">
+
+            <h2>Pets disponíveis para adoção</h2>
+
+
+            <article>
+
+                <img
+                    src="mel.png"
+                    alt="Mel, cachorro disponível para adoção"
+                    width="250"
+                />
+
+                <h3>Mel</h3>
+
+                <p>
+                    2 anos - Porte médio
+                </p>
+
+                <p>
+                    Dócil, carinhosa e adora brincar.
+                </p>
+
+                <a href="#formulario">
+                    Quero conhecer
+                </a>
+
+            </article>
+
+
+            <article>
+
+                <img
+                    src="thor.png"
+                    alt="Thor, cachorro disponível para adoção"
+                    width="250"
+                />
+
+                <h3>Thor</h3>
+
+                <p>
+                    1 ano - Porte grande
+                </p>
+
+                <p>
+                    Energético, sociável e muito companheiro.
+                </p>
+
+                <a href="#formulario">
+                    Quero conhecer
+                </a>
+
+            </article>
+
+
+            <article>
+
+                <img
+                    src="luna.png"
+                    alt="Luna, gata disponível para adoção"
+                    width="250"
+                />
+
+                <h3>Luna</h3>
+
+                <p>
+                    3 anos - Porte pequeno
+                </p>
+
+                <p>
+                    Calma, carinhosa e gosta do conforto.
+                </p>
+
+                <a href="#formulario">
+                    Quero conhecer
+                </a>
+
+            </article>
+
+        </section>
+
+
+        <section class="chamada">
+
+            <h2>Por que adotar?</h2>
+
+            <p>
+                Você dá um lar, um novo começo e muito amor
+                para um pet que precisa.
+            </p>
+
+            <p>
+                E ainda ganha um amigo para a vida toda!
+            </p>
+
+        </section>
+
+
+        <section id="formulario">
+
+            <h2>Tenho interesse em adotar</h2>
+
+            <p>
+                Preencha o formulário e nossa equipe entrará em contato.
+            </p>
+
+
+            <form>
+
+                <p>
+
+                    <label for="nome">
+                        Nome:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                    />
+
+                </p>
+
+
+                <p>
+
+                    <label for="email">
+                        E-mail:
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                    />
+
+                </p>
+
+
+                <p>
+
+                    <label for="telefone">
+                        Telefone:
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefone"
+                        name="telefone"
+                    />
+
+                </p>
+
+
+                <p>
+
+                    <label for="pet">
+                        Qual pet tem interesse:
+                    </label>
+
+                    <select
+                        id="pet"
+                        name="pet"
+                    >
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option value="mel">
+                            Mel
+                        </option>
+
+                        <option value="thor">
+                            Thor
+                        </option>
+
+                        <option value="luna">
+                            Luna
+                        </option>
+
+                    </select>
+
+                </p>
+
+
+                <p>
+
+                    <label for="mensagem">
+                        Mensagem:
+                    </label>
+
+                    <br />
+
+                    <textarea
+                        id="mensagem"
+                        name="mensagem"
+                        rows="4"
+                        cols="30"
+                    ></textarea>
+
+                </p>
+
+
+                <button type="button">
+                    Enviar
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            <strong>PetLife</strong>
+        </p>
+
+        <nav aria-label="Menu do rodapé">
+
+            <a href="index.html">Início</a>
+            <a href="banho-tosa.html">Banho e Tosa</a>
+            <a href="hotel.html">Hotel</a>
+            <a href="adocao.html" aria-current="page">Adoção</a>
+
+        </nav>
+
+    </footer>
+
+</body>
+
+</html>
